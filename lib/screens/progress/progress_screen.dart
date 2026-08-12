@@ -6,6 +6,7 @@ import '../../providers/auth_provider.dart';
 import '../../providers/subscription_provider.dart';
 import '../../widgets/glass_card.dart';
 import '../../widgets/custom_button.dart';
+import '../../widgets/custom_tab_bar.dart';
 import '../../widgets/paywall_modal.dart';
 import '../analytics/advanced_analytics_screen.dart';
 
@@ -52,16 +53,9 @@ class _ProgressScreenState extends State<ProgressScreen> with SingleTickerProvid
             },
           ),
         ],
-        bottom: TabBar(
+        bottom: CustomPillTabBar(
           controller: _tabController,
-          indicatorColor: const Color(0xFFD0FD38),
-          labelColor: const Color(0xFFD0FD38),
-          unselectedLabelColor: Colors.white60,
-          tabs: const [
-            Tab(text: 'Weight & BMI'),
-            Tab(text: 'Measurements'),
-            Tab(text: 'Photos'),
-          ],
+          tabs: const ['Weight & BMI', 'Measurements', 'Photos'],
         ),
       ),
       body: TabBarView(

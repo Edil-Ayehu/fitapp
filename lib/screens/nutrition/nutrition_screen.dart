@@ -6,6 +6,7 @@ import '../../providers/subscription_provider.dart';
 import '../../widgets/glass_card.dart';
 import '../../widgets/progress_ring.dart';
 import '../../widgets/custom_button.dart';
+import '../../widgets/custom_tab_bar.dart';
 import '../../widgets/paywall_modal.dart';
 
 class NutritionScreen extends StatefulWidget {
@@ -38,15 +39,9 @@ class _NutritionScreenState extends State<NutritionScreen> with SingleTickerProv
         backgroundColor: const Color(0xFF141722),
         elevation: 0,
         title: const Text('Nutrition & Macros 🥗', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        bottom: TabBar(
+        bottom: CustomPillTabBar(
           controller: _tabController,
-          indicatorColor: const Color(0xFFD0FD38),
-          labelColor: const Color(0xFFD0FD38),
-          unselectedLabelColor: Colors.white60,
-          tabs: const [
-            Tab(text: 'Food Tracker'),
-            Tab(text: 'Meal Plans'),
-          ],
+          tabs: const ['Food Tracker', 'Meal Plans'],
         ),
       ),
       body: TabBarView(

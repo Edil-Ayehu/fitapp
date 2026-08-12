@@ -5,6 +5,7 @@ import '../../providers/active_workout_provider.dart';
 import '../../widgets/glass_card.dart';
 import '../../widgets/stat_chip.dart';
 import '../../widgets/custom_button.dart';
+import '../../widgets/custom_tab_bar.dart';
 import '../live_workout/live_workout_screen.dart';
 import 'exercise_detail_screen.dart';
 import 'custom_workout_builder_screen.dart';
@@ -33,18 +34,10 @@ class _WorkoutTabScreenState extends State<WorkoutTabScreen> with SingleTickerPr
         backgroundColor: const Color(0xFF141722),
         elevation: 0,
         title: const Text('Workout Hub 🏋️‍♂️', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        bottom: TabBar(
+        bottom: CustomPillTabBar(
           controller: _tabController,
-          indicatorColor: const Color(0xFFD0FD38),
-          labelColor: const Color(0xFFD0FD38),
-          unselectedLabelColor: Colors.white60,
           isScrollable: true,
-          tabs: const [
-            Tab(text: 'Library'),
-            Tab(text: 'Programs'),
-            Tab(text: 'Custom Builder'),
-            Tab(text: 'History & PRs'),
-          ],
+          tabs: const ['Library', 'Programs', 'Custom Builder', 'History & PRs'],
         ),
       ),
       body: TabBarView(

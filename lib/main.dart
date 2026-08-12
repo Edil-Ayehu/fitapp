@@ -94,6 +94,18 @@ class FitPulseApp extends StatelessWidget {
           checkmarkColor: Colors.black,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
+        tabBarTheme: TabBarThemeData(
+          dividerColor: Colors.transparent,
+          indicatorSize: TabBarIndicatorSize.tab,
+          indicator: BoxDecoration(
+            color: const Color(0xFFD0FD38),
+            borderRadius: BorderRadius.circular(14),
+          ),
+          labelColor: Colors.black,
+          unselectedLabelColor: Colors.white70,
+          labelStyle: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 13),
+          unselectedLabelStyle: GoogleFonts.outfit(fontWeight: FontWeight.w600, fontSize: 13),
+        ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: const Color(0xFF1E2232),

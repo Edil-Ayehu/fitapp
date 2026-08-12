@@ -7,6 +7,7 @@ import '../../providers/subscription_provider.dart';
 
 import '../../widgets/glass_card.dart';
 import '../../widgets/custom_button.dart';
+import '../../widgets/custom_tab_bar.dart';
 import '../../widgets/paywall_modal.dart';
 
 class AICoachScreen extends StatefulWidget {
@@ -25,7 +26,7 @@ class _AICoachScreenState extends State<AICoachScreen> with SingleTickerProvider
   int _selectedDays = 4;
   int _selectedDuration = 60;
   String _selectedEquipment = 'Full Gym';
-  String _selectedLevel = 'Intermediate';
+  final String _selectedLevel = 'Intermediate';
 
   @override
   void initState() {
@@ -46,16 +47,10 @@ class _AICoachScreenState extends State<AICoachScreen> with SingleTickerProvider
         backgroundColor: const Color(0xFF141722),
         elevation: 0,
         title: const Text('AI Personal Trainer 🤖', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        bottom: TabBar(
+        bottom: CustomPillTabBar(
           controller: _tabController,
-          indicatorColor: const Color(0xFF00E5FF),
-          labelColor: const Color(0xFF00E5FF),
-          unselectedLabelColor: Colors.white60,
-          tabs: const [
-            Tab(text: 'AI Chat'),
-            Tab(text: 'Workout Wizard'),
-            Tab(text: 'Progress Report'),
-          ],
+          activeColor: const Color(0xFF00E5FF),
+          tabs: const ['AI Chat', 'Workout Wizard', 'Progress Report'],
         ),
       ),
       body: TabBarView(
